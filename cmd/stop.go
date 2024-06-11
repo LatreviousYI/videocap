@@ -1,7 +1,7 @@
 /*
  * @Author       : lvyitao lvyitao@fanhaninfo.com
  * @Date         : 2024-06-07 15:56:38
- * @LastEditTime : 2024-06-07 16:10:03
+ * @LastEditTime : 2024-06-11 11:02:51
  */
 package cmd
 
@@ -64,3 +64,7 @@ func ServerExit() {
 	}
 	os.Exit(0)
 }
+
+export GOROOT=/home/orangepi/work_space/go
+export GOPATH=/home/orangepi/go
+export PATH=$PATH:$GOROOT/bin

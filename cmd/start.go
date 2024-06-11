@@ -81,7 +81,7 @@ func daemonStart(){
 
 var startCmd = &cobra.Command{
 	Use: "start",
-	Short: "Start the application",
+	Short: "Start the application    if start console 启动时会打开控制台,不会再后台运行",
 	Args: cobra.MaximumNArgs(1),
 	Run: func(cmd *cobra.Command, args []string) {
 		if len(args) > 0 && args[0] == "console"{
