@@ -11,6 +11,9 @@ import (
 )
 
 func Init(factoryRouter *gin.Engine){
-	systemConfigRouetr := factoryRouter.Group("/system/config")
-	systemConfigRouetr.POST("/create",)
+	systemConfigRouetr := factoryRouter.Group("/api/system/config")
+	systemConfigRouetr.POST("/update",systemConfigUpdate)
+	systemConfigRouetr.GET("/detail",systemConfigDetail)
+	systemConfigRouetr.POST("/output/update",systemConfigOutputUpdate)
+	systemConfigRouetr.GET("/output/detail",systemConfigOutputDetail)
 }

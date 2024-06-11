@@ -11,6 +11,7 @@ import (
 	"net"
 	"os"
 	"path/filepath"
+	"regexp"
 	"runtime/debug"
 	"strings"
 	"sync"
@@ -102,4 +103,33 @@ func SafeRunGoRunGoroutineOnce(wg *sync.WaitGroup, ctx context.Context, fn func(
 	defer wg.Done()
 	defer ErrCatch()
 	fn()
+}
+
+
+
+func IsLegalString(str string) bool {
+	if str == "" {
+		return false
+	}
+	strList := strings.Split(str, "")
+	strListLen := len(strList)
+	match, err := regexp.MatchString("^[\u4e00-\u9fa50-9a-zA-Z]+$", strList[0])
+	if err != nil {
+		log.Println(err.Error())
+		return false
+	}
+	if !match {
+		return false
+	}
+	if strListLen > 2 {
+		match, err = regexp.MatchString("^[0-9a-zA-Z_\u4e00-\u9fa5]+$", strings.Join(strList[1:],""))
+		if err != nil {
+			log.Println(err.Error())
+			return false
+		}
+		if !match {
+			return false
+		}
+	}
+	return true
 }

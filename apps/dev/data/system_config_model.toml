@@ -1,0 +1,4 @@
+device_id = "de1hjhjkhkja"
+collection_frequency = "0 0 2 1 * ?"
+img_name_rules = "{{today}}/{{deviceid}}-{{datetime}}"
+resolution_ratio = "1920,1080"

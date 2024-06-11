@@ -21,7 +21,7 @@ func init(){
 }
 
 func start(){
-	factory.GinRouter.GET("/", func(c *gin.Context) {
+	factory.GinRouter.GET("/healthy", func(c *gin.Context) {
 		c.String(http.StatusOK, "Welcome Gin Server")
 	})
 	go func() {

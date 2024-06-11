@@ -64,7 +64,3 @@ func ServerExit() {
 	}
 	os.Exit(0)
 }
-
-export GOROOT=/home/orangepi/work_space/go
-export GOPATH=/home/orangepi/go
-export PATH=$PATH:$GOROOT/bin

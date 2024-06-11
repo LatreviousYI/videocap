@@ -1,0 +1,15 @@
+[local]
+  enable = true
+  output_path = "/local/output"
+
+[nfs]
+  enable = true
+  output_path = "/nfs/output"
+  nfs_host = "nfs.example.com"
+
+[cifs]
+  enable = true
+  output_path = "/cifs/output"
+  cifs_host = "cifs.example.com"
+  username = "user"
+  password = "pass"

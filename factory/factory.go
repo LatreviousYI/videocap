@@ -32,6 +32,7 @@ func init() {
 		gin.SetMode(gin.ReleaseMode)
 	}
 	GinRouter = gin.Default()
+	GinRouter.Use(Cors())
 	HttpServer = &http.Server{
 		Addr:    fmt.Sprintf(":%d", conifg.Port),
 		Handler: GinRouter,
