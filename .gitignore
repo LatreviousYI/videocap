@@ -1,14 +1,6 @@
 .idea
 .vscode
 .DS_Store
-git.*.sh
-iter_80000.onnx
-v3
-*.onnx
-*.bin
-fileobjects
-publishfile
-.processManager
 
 test/
 
