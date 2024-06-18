@@ -1,5 +1,0 @@
-device_id = "hjhjhj"
-collection_frequency = "0 0/1 * * * ?"
-img_name_rules = "{{datetime}}{{deviceid}}{{today}}"
-resolution_ratio = "1920x1080"
-machine_id = "aa92ec1b40eb19cd576d25a7a89a0d47"

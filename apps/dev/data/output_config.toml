@@ -1,7 +1,0 @@
-[local]
-  enable = true
-  output_path = "/home/orangepi/go/src/video-capture-terminal-server/apps/dev/images"
-
-[clouds]
-  enable = true
-  host = "http://ai101.fanhaninfo.net:9000"

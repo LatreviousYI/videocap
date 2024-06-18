@@ -9,3 +9,6 @@ apps/*/pid
 
 env/
 images/
+
+!apps/*/data/.bulk
+apps/*/data/
