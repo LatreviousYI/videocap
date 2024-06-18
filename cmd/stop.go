@@ -23,7 +23,7 @@ func init(){
 func stop(){
 	initDaemon()
 	if pid == -1 {
-		log.Println("Seems not have been started. Try use `alist start` to start server.")
+		log.Println("Seems not have been started. Try use `./main start` to start server.")
 		return
 	}
 	process, err := os.FindProcess(pid)

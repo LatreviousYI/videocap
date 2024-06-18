@@ -6,6 +6,7 @@
 package systemConfig
 
 import (
+	"src/common"
 	"src/utils"
 
 	"github.com/gin-gonic/gin"
@@ -22,10 +23,30 @@ func systemConfigUpdate(c *gin.Context) {
 		utils.ErrResponse(c, 500, err.Error(), "")
 		return
 	}
+	oldSystemConfigModel := SystemConfigModel{}
+	err = utils.Get(oldSystemConfigModel.DataFileName(),&oldSystemConfigModel)
+	if err != nil {
+		utils.ErrResponse(c, 500, err.Error(), "")
+		return
+	}
+	systemConfigModel.MachineId = oldSystemConfigModel.MachineId
 	err = utils.Save(systemConfigModel.DataFileName(), systemConfigModel)
 	if err != nil {
 		utils.ErrResponse(c, 500, err.Error(), "")
 		return
+	}
+	if oldSystemConfigModel.CollectionFrequency != systemConfigModel.CollectionFrequency{
+		common.CronTab.Remove(common.GetEntryId())
+		entryid,err := common.CronTab.AddFunc(systemConfigModel.CollectionFrequency,ImageCapture)
+		if err != nil{
+			utils.ErrResponse(c, 500, err.Error(), "")
+			return
+		}
+		common.EditEntryId(entryid)
+	}
+	if oldSystemConfigModel.ResolutionRatio != systemConfigModel.ResolutionRatio{
+		utils.StopMjpgStreamer()
+		GuaranteeMjpgServerRunning()
 	}
 	utils.SuccessResp(c, "")
 }
@@ -57,6 +78,7 @@ func systemConfigOutputUpdate(c *gin.Context) {
 		return
 	}
 	utils.SuccessResp(c, "")
+
 }
 
 func systemConfigOutputDetail(c *gin.Context) {
@@ -67,4 +89,53 @@ func systemConfigOutputDetail(c *gin.Context) {
 		return
 	}
 	utils.SuccessResp(c, outputConfig)
+}
+
+func getImageContent(c *gin.Context){
+	b,err:=GetImage()
+	if err != nil{
+		utils.ErrResponse(c, 500, err.Error(), "")
+		return
+	}
+	c.Data(200,"image/png",b)
+}
+
+func getWifiList(c *gin.Context){
+	wifiList,err:=utils.GetWifiList()
+	if err != nil{
+		utils.ErrResponse(c, 500, err.Error(), "")
+		return
+	}
+	utils.SuccessResp(c,wifiList)
+}
+
+func connectWifi(c *gin.Context){
+	wifiInfo := WifiConfig{}
+	if err := c.ShouldBind(&wifiInfo); err != nil {
+		utils.ErrResponse(c, 500, err.Error(), "")
+		return
+	}
+	err := utils.ConnectWifi(wifiInfo.Ssid,wifiInfo.Password)
+	if err != nil{
+		utils.ErrResponse(c, 500, err.Error(), "")
+		return
+	}
+	utils.SuccessResp(c,"")
+}
+
+func checkWifiStatus(c *gin.Context){
+	ok,err:=utils.CheckWifiStatus()
+	if err != nil{
+		utils.ErrResponse(c, 500, err.Error(), "")
+		return
+	}
+	if !ok{
+		utils.ErrResponse(c, 600, "未连接", "")
+		return
+	}
+	utils.SuccessResp(c,ok)
+}
+
+func getNameRulesList(c *gin.Context){
+	utils.SuccessResp(c,FileTemplateMap)
 }

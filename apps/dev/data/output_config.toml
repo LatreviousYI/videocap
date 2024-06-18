@@ -1,15 +1,7 @@
 [local]
   enable = true
-  output_path = "/local/output"
+  output_path = "/home/orangepi/go/src/video-capture-terminal-server/apps/dev/images"
 
-[nfs]
+[clouds]
   enable = true
-  output_path = "/nfs/output"
-  nfs_host = "nfs.example.com"
-
-[cifs]
-  enable = true
-  output_path = "/cifs/output"
-  cifs_host = "cifs.example.com"
-  username = "user"
-  password = "pass"
+  host = "http://ai101.fanhaninfo.net:9000"

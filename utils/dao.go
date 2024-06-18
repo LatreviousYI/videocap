@@ -20,6 +20,7 @@ func Save(fileName string,data any) error{
 	if err != nil{
 		return err
 	}
+	defer file.Close()
 	encoder := toml.NewEncoder(file)
     if err := encoder.Encode(data); err != nil {
         return err

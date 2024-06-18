@@ -1,25 +1,20 @@
 package main
 
 import (
-    "fmt"
-    "regexp"
+	"log"
+	// "net/url"
+	"src/utils"
 )
 
-func main() {
-    // 示例字符串
-    str := "{{today}}/{{deviceid}}-{{datetime}}{{jjjj}}"
-
-    // 定义正则表达式
-    re := regexp.MustCompile(`\{\{(.*?)\}\}`)
-
-    // 查找所有匹配项
-    matches := re.FindAllStringSubmatch(str, -1)
-
-    // 打印所有匹配项
-	fmt.Println(matches)
-    for _, match := range matches {
-        if len(match) > 1 {
-            fmt.Println(match[1])
-        }
-    }
+func main(){
+	log.Println(utils.GetIP()) 
+	
 }
+
+
+// mount -t nfs 10.21.1.25:"\\\\nas.fanhaninfo.net\\AI_Team\\projects\\P00114 监护仪数据采集器 今日医疗\\20240611代码测试数据（勿删）" /home/orangepi/nas_images
+// mount -t cifs //nas.fanhaninfo.net/AI_Team/data_center/01项目资料汇总/20240617监护仪数据采集器/20240611代码测试数据（勿删） /home/orangepi/nas_images -o username=lvyitao,password=Lyt0105@ 
+
+
+// mount -t nfs 10.21.1.25:/AI_Team/data_center/01项目资料汇总/20240617监护仪数据采集器/20240611代码测试数据（勿删） /home/orangepi/test
+
