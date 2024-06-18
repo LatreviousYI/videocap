@@ -1,0 +1,15 @@
+.idea
+.vscode
+.DS_Store
+
+test/
+
+apps/*/server.log
+apps/*/pid
+
+env/
+images/
+
+
+apps/*/data/*
+!apps/*/data/.bulk
