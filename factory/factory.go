@@ -10,6 +10,7 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"path/filepath"
 	"src/module/systemConfig"
 	"src/utils"
 	"sync"
@@ -27,6 +28,13 @@ var GlobalCtx context.Context
 
 var GlobalCancel context.CancelFunc
 
+
+func index(c *gin.Context){
+	c.Header("content-type", "text/html;charset=utf-8")
+	basePath := utils.GetExcutePath()
+	c.File(filepath.Join(basePath,"www","index.html"))
+}
+
 func init() {
 	log.SetFlags(log.LstdFlags | log.Llongfile | log.Ldate)
 	conifg := utils.GetConfig()
@@ -41,9 +49,12 @@ func init() {
 		Handler: GinRouter,
 	}
 	GlobalCtx, GlobalCancel = context.WithCancel(context.Background())
-
+	GinRouter.GET("/healthy", func(c *gin.Context) {
+		c.String(http.StatusOK, "Welcome Gin Server")
+	})
+	GinRouter.Static("/static","./www/static")
+	GinRouter.NoRoute(index)
 	systemConfig.Init(GinRouter)
-	
 }
 
 

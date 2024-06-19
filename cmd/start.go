@@ -21,9 +21,6 @@ func init(){
 }
 
 func start(){
-	factory.GinRouter.GET("/healthy", func(c *gin.Context) {
-		c.String(http.StatusOK, "Welcome Gin Server")
-	})
 	go func() {
 		// 服务连接
 		log.Println("server start")
