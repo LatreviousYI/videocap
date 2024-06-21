@@ -1,0 +1,326 @@
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] POST   /api/system/config/update --> src/module/systemConfig.systemConfigUpdate (4 handlers)
+[GIN-debug] GET    /api/system/config/detail --> src/module/systemConfig.systemConfigDetail (4 handlers)
+[GIN-debug] POST   /api/system/config/output/update --> src/module/systemConfig.systemConfigOutputUpdate (4 handlers)
+[GIN-debug] GET    /api/system/config/output/detail --> src/module/systemConfig.systemConfigOutputDetail (4 handlers)
+[GIN-debug] GET    /healthy                  --> src/cmd.start.func1 (4 handlers)
+2024/06/13 08:44:01 server start
+2024/06/13 08:44:59 Shutdown Server ...
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /healthy                  --> src/factory.init.0.func1 (5 handlers)
+[GIN-debug] GET    /static/*filepath         --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (5 handlers)
+[GIN-debug] HEAD   /static/*filepath         --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (5 handlers)
+[GIN-debug] POST   /api/system/config/update --> src/module/systemConfig.systemConfigUpdate (5 handlers)
+[GIN-debug] GET    /api/system/config/detail --> src/module/systemConfig.systemConfigDetail (5 handlers)
+[GIN-debug] POST   /api/system/config/output/update --> src/module/systemConfig.systemConfigOutputUpdate (5 handlers)
+[GIN-debug] GET    /api/system/config/output/detail --> src/module/systemConfig.systemConfigOutputDetail (5 handlers)
+[GIN-debug] GET    /api/system/config/images --> src/module/systemConfig.getImageContent (5 handlers)
+[GIN-debug] GET    /api/system/config/wifi/list --> src/module/systemConfig.getWifiList (5 handlers)
+[GIN-debug] POST   /api/system/config/wifi/connect --> src/module/systemConfig.connectWifi (5 handlers)
+[GIN-debug] GET    /api/system/config/wifi/status --> src/module/systemConfig.checkWifiStatus (5 handlers)
+[GIN-debug] GET    /api/system/config/name/rules --> src/module/systemConfig.getNameRulesList (5 handlers)
+2024/06/19 10:15:34 /home/orangepi/go/src/video-capture-terminal-server/module/systemConfig/systemConfig.object.go:292: MJPG-streamer已启动
+2024/06/19 10:15:34 /home/orangepi/go/src/video-capture-terminal-server/cmd/start.go:26: server start
+[GIN] 2024/06/19 - 10:15:55 | 200 |    1.997379ms |  192.168.18.223 | GET      "/"
+[GIN] 2024/06/19 - 10:15:55 | 200 |   32.451435ms |  192.168.18.223 | GET      "/static/main.ff1f19f5.css"
+[GIN] 2024/06/19 - 10:15:55 | 200 |   58.412025ms |  192.168.18.223 | GET      "/static/main.2115247a.js"
+[GIN] 2024/06/19 - 10:15:55 | 200 |     327.084µs |  192.168.18.223 | GET      "/logo.png"
+[GIN] 2024/06/19 - 10:15:55 | 200 |     937.835µs |  192.168.18.223 | GET      "/static/BasicInfo.9916d298.css"
+[GIN] 2024/06/19 - 10:15:55 | 200 |     974.835µs |  192.168.18.223 | GET      "/static/BasicInfo.ceef5e5c.js"
+[GIN] 2024/06/19 - 10:15:55 | 200 |    1.876753ms |  192.168.18.223 | GET      "/static/Breadcrumbs.b37ddd03.js"
+[GIN] 2024/06/19 - 10:15:55 | 200 |    3.744924ms |  192.168.18.223 | GET      "/static/rpc.18f00a8d.js"
+[GIN] 2024/06/19 - 10:15:55 | 200 |    5.292676ms |  192.168.18.223 | GET      "/static/index.1ef73378.js"
+[GIN] 2024/06/19 - 10:15:55 | 200 |    8.413849ms |  192.168.18.223 | GET      "/static/Input.2eb8ead0.js"
+[GIN] 2024/06/19 - 10:15:55 | 200 |    2.419755ms |  192.168.18.223 | GET      "/static/logo.png"
+[GIN] 2024/06/19 - 10:15:55 | 200 |     394.168µs |  192.168.18.223 | GET      "/api/system/config/name/rules"
+[GIN] 2024/06/19 - 10:15:55 | 200 |    1.126752ms |  192.168.18.223 | GET      "/api/system/config/detail"
+[GIN] 2024/06/19 - 10:15:57 | 200 |    2.271629ms |  192.168.18.223 | GET      "/static/WirelessNet.9d1a1d13.css"
+[GIN] 2024/06/19 - 10:15:57 | 200 |    3.581965ms |  192.168.18.223 | GET      "/static/index.0e0ebbe9.js"
+[GIN] 2024/06/19 - 10:15:57 | 200 |   31.210641ms |  192.168.18.223 | GET      "/static/WirelessNet.19442d57.js"
+[GIN] 2024/06/19 - 10:15:59 | 200 |   2.04888905s |  192.168.18.223 | GET      "/api/system/config/wifi/list"
+[GIN] 2024/06/19 - 10:16:00 | 200 |    1.896003ms |  192.168.18.223 | GET      "/static/MultipleOutput.d1480cb8.css"
+[GIN] 2024/06/19 - 10:16:00 | 200 |    4.189549ms |  192.168.18.223 | GET      "/static/MultipleOutput.87f130b2.js"
+[GIN] 2024/06/19 - 10:16:00 | 200 |      783.71µs |  192.168.18.223 | GET      "/api/system/config/output/detail"
+[GIN] 2024/06/19 - 10:16:01 | 200 |        99.5µs |  192.168.18.223 | GET      "/api/system/config/name/rules"
+[GIN] 2024/06/19 - 10:16:01 | 200 |     453.293µs |  192.168.18.223 | GET      "/api/system/config/detail"
+2024/06/19 10:16:40 /home/orangepi/go/src/video-capture-terminal-server/cmd/start.go:34: Shutdown Server ...
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /healthy                  --> src/factory.init.0.func1 (5 handlers)
+[GIN-debug] GET    /static/*filepath         --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (5 handlers)
+[GIN-debug] HEAD   /static/*filepath         --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (5 handlers)
+[GIN-debug] POST   /api/system/config/update --> src/module/systemConfig.systemConfigUpdate (5 handlers)
+[GIN-debug] GET    /api/system/config/detail --> src/module/systemConfig.systemConfigDetail (5 handlers)
+[GIN-debug] POST   /api/system/config/output/update --> src/module/systemConfig.systemConfigOutputUpdate (5 handlers)
+[GIN-debug] GET    /api/system/config/output/detail --> src/module/systemConfig.systemConfigOutputDetail (5 handlers)
+[GIN-debug] GET    /api/system/config/images --> src/module/systemConfig.getImageContent (5 handlers)
+[GIN-debug] GET    /api/system/config/wifi/list --> src/module/systemConfig.getWifiList (5 handlers)
+[GIN-debug] POST   /api/system/config/wifi/connect --> src/module/systemConfig.connectWifi (5 handlers)
+[GIN-debug] GET    /api/system/config/wifi/status --> src/module/systemConfig.checkWifiStatus (5 handlers)
+[GIN-debug] GET    /api/system/config/name/rules --> src/module/systemConfig.getNameRulesList (5 handlers)
+2024/06/19 10:17:37 /home/orangepi/go/src/video-capture-terminal-server/module/systemConfig/systemConfig.object.go:292: MJPG-streamer已启动
+2024/06/19 10:17:37 /home/orangepi/go/src/video-capture-terminal-server/cmd/start.go:26: server start
+[GIN] 2024/06/19 - 10:17:40 | 200 |     680.543µs |  192.168.18.223 | GET      "/collect/basic_info"
+[GIN] 2024/06/19 - 10:17:40 | 200 |     439.542µs |  192.168.18.223 | GET      "/api/system/config/name/rules"
+[GIN] 2024/06/19 - 10:17:40 | 200 |     1.57242ms |  192.168.18.223 | GET      "/api/system/config/detail"
+[GIN] 2024/06/19 - 10:17:41 | 200 |     642.001µs |  192.168.18.223 | GET      "/static/favicon.ico"
+[GIN] 2024/06/19 - 10:17:43 | 200 |  1.538673854s |  192.168.18.223 | GET      "/api/system/config/wifi/list"
+[GIN] 2024/06/19 - 10:17:44 | 200 |    1.217752ms |  192.168.18.223 | GET      "/api/system/config/output/detail"
+[GIN] 2024/06/19 - 10:17:45 | 200 |      91.584µs |  192.168.18.223 | GET      "/api/system/config/name/rules"
+[GIN] 2024/06/19 - 10:17:45 | 200 |     453.543µs |  192.168.18.223 | GET      "/api/system/config/detail"
+[GIN] 2024/06/19 - 10:18:14 | 304 |     451.001µs |  192.168.18.223 | GET      "/collect/basic_info"
+[GIN] 2024/06/19 - 10:18:14 | 200 |     214.667µs |  192.168.18.223 | GET      "/api/system/config/name/rules"
+[GIN] 2024/06/19 - 10:18:14 | 200 |     660.209µs |  192.168.18.223 | GET      "/api/system/config/detail"
+[GIN] 2024/06/19 - 10:18:17 | 200 |     437.459µs |  192.168.18.223 | GET      "/api/system/config/output/detail"
+[GIN] 2024/06/19 - 10:18:17 | 200 |  1.523683493s |  192.168.18.223 | GET      "/api/system/config/wifi/list"
+[GIN] 2024/06/19 - 10:18:19 | 200 |  122.601852ms |  192.168.18.223 | GET      "/api/system/config/wifi/list"
+[GIN] 2024/06/19 - 10:18:25 | 200 |      96.708µs |  192.168.18.223 | GET      "/api/system/config/name/rules"
+[GIN] 2024/06/19 - 10:18:25 | 200 |     383.667µs |  192.168.18.223 | GET      "/api/system/config/detail"
+2024/06/19 10:36:11 /home/orangepi/go/src/video-capture-terminal-server/cmd/start.go:34: Shutdown Server ...
+2024/06/19 10:37:16 /home/orangepi/go/src/video-capture-terminal-server/module/systemConfig/systemConfig.object.go:292: MJPG-streamer已启动
+2024/06/19 10:37:16 /home/orangepi/go/src/video-capture-terminal-server/cmd/start.go:26: server start
+2024/06/19 10:46:32 /home/orangepi/go/src/video-capture-terminal-server/cmd/start.go:34: Shutdown Server ...
+2024/06/19 10:47:10 /home/orangepi/go/src/video-capture-terminal-server/module/systemConfig/systemConfig.object.go:292: MJPG-streamer已启动
+2024/06/19 10:47:10 /home/orangepi/go/src/video-capture-terminal-server/cmd/start.go:28: server start
+2024/06/19 10:47:15 /home/orangepi/go/src/video-capture-terminal-server/cmd/start.go:36: Shutdown Server ...
+2024/06/19 10:49:30 /home/orangepi/go/src/video-capture-terminal-server/module/systemConfig/systemConfig.object.go:292: MJPG-streamer已启动
+2024/06/19 10:49:30 /home/orangepi/go/src/video-capture-terminal-server/cmd/start.go:28: server start
+[GIN] 2024/06/19 - 12:24:51 | 304 |     431.458µs |  192.168.18.223 | GET      "/collect/basic_info"
+[GIN] 2024/06/19 - 12:24:51 | 304 |     262.167µs |  192.168.18.223 | GET      "/static/main.ff1f19f5.css"
+[GIN] 2024/06/19 - 12:24:51 | 304 |     240.458µs |  192.168.18.223 | GET      "/static/main.2115247a.js"
+[GIN] 2024/06/19 - 12:24:51 | 304 |     203.083µs |  192.168.18.223 | GET      "/static/BasicInfo.9916d298.css"
+[GIN] 2024/06/19 - 12:24:51 | 304 |     154.208µs |  192.168.18.223 | GET      "/static/BasicInfo.ceef5e5c.js"
+[GIN] 2024/06/19 - 12:24:51 | 304 |     146.875µs |  192.168.18.223 | GET      "/static/Breadcrumbs.b37ddd03.js"
+[GIN] 2024/06/19 - 12:24:51 | 304 |     351.667µs |  192.168.18.223 | GET      "/static/Input.2eb8ead0.js"
+[GIN] 2024/06/19 - 12:24:51 | 304 |     383.417µs |  192.168.18.223 | GET      "/static/index.1ef73378.js"
+[GIN] 2024/06/19 - 12:24:51 | 304 |     390.667µs |  192.168.18.223 | GET      "/static/rpc.18f00a8d.js"
+[GIN] 2024/06/19 - 12:24:51 | 304 |     242.208µs |  192.168.18.223 | GET      "/static/logo.png"
+[GIN] 2024/06/19 - 12:24:51 | 200 |      378.75µs |  192.168.18.223 | GET      "/api/system/config/name/rules"
+[GIN] 2024/06/19 - 12:24:51 | 200 |    1.146749ms |  192.168.18.223 | GET      "/api/system/config/detail"
+[GIN] 2024/06/19 - 12:24:51 | 304 |       183.5µs |  192.168.18.223 | GET      "/static/favicon.ico"
+[GIN] 2024/06/19 - 12:24:52 | 304 |      374.25µs |  192.168.18.223 | GET      "/static/WirelessNet.9d1a1d13.css"
+[GIN] 2024/06/19 - 12:24:52 | 304 |     385.708µs |  192.168.18.223 | GET      "/static/index.0e0ebbe9.js"
+[GIN] 2024/06/19 - 12:24:52 | 304 |     397.917µs |  192.168.18.223 | GET      "/static/WirelessNet.19442d57.js"
+[GIN] 2024/06/19 - 12:24:54 | 200 |  1.717425091s |  192.168.18.223 | GET      "/api/system/config/wifi/list"
+[GIN] 2024/06/19 - 12:24:55 | 304 |     391.542µs |  192.168.18.223 | GET      "/static/MultipleOutput.d1480cb8.css"
+[GIN] 2024/06/19 - 12:24:55 | 304 |     504.708µs |  192.168.18.223 | GET      "/static/MultipleOutput.87f130b2.js"
+[GIN] 2024/06/19 - 12:24:55 | 200 |    1.326166ms |  192.168.18.223 | GET      "/api/system/config/output/detail"
+[GIN] 2024/06/19 - 12:24:56 | 200 |     160.625µs |  192.168.18.223 | GET      "/api/system/config/name/rules"
+[GIN] 2024/06/19 - 12:24:56 | 200 |     753.791µs |  192.168.18.223 | GET      "/api/system/config/detail"
+[GIN] 2024/06/19 - 12:24:59 | 200 |  101.512948ms |  192.168.18.223 | GET      "/api/system/config/wifi/list"
+[GIN] 2024/06/19 - 12:25:00 | 200 |      472.75µs |  192.168.18.223 | GET      "/api/system/config/output/detail"
+[GIN] 2024/06/19 - 14:17:09 | 200 |     434.542µs |  192.168.18.223 | GET      "/api/system/config/name/rules"
+[GIN] 2024/06/19 - 14:17:09 | 200 |     648.542µs |  192.168.18.223 | GET      "/api/system/config/detail"
+[GIN] 2024/06/19 - 14:17:09 | 304 |    1.222167ms |  192.168.18.223 | GET      "/static/favicon.ico"
+[GIN] 2024/06/19 - 14:17:29 | 200 |    5.083711ms |  192.168.18.223 | POST     "/api/system/config/update"
+[GIN] 2024/06/19 - 14:17:29 | 200 |     950.667µs |  192.168.18.223 | GET      "/api/system/config/detail"
+[GIN] 2024/06/19 - 14:19:42 | 200 |    1.046126ms |  192.168.18.223 | GET      "/api/system/config/output/detail"
+2024/06/19 14:20:56 /home/orangepi/go/src/video-capture-terminal-server/cmd/start.go:36: Shutdown Server ...
+2024/06/19 14:25:20 /home/orangepi/go/src/video-capture-terminal-server/module/systemConfig/systemConfig.object.go:292: MJPG-streamer已启动
+2024/06/19 14:25:20 /home/orangepi/go/src/video-capture-terminal-server/cmd/start.go:28: server start
+[GIN] 2024/06/19 - 14:25:44 | 200 |    2.110793ms |  192.168.18.223 | GET      "/collect/multiple_output"
+[GIN] 2024/06/19 - 14:25:44 | 304 |     271.833µs |  192.168.18.223 | GET      "/static/main.ff1f19f5.css"
+[GIN] 2024/06/19 - 14:25:44 | 304 |     222.833µs |  192.168.18.223 | GET      "/static/main.2115247a.js"
+[GIN] 2024/06/19 - 14:25:44 | 304 |       254.5µs |  192.168.18.223 | GET      "/logo.png"
+[GIN] 2024/06/19 - 14:25:45 | 304 |     245.292µs |  192.168.18.223 | GET      "/static/MultipleOutput.d1480cb8.css"
+[GIN] 2024/06/19 - 14:25:45 | 304 |         155µs |  192.168.18.223 | GET      "/static/MultipleOutput.87f130b2.js"
+[GIN] 2024/06/19 - 14:25:45 | 304 |      248.25µs |  192.168.18.223 | GET      "/static/Breadcrumbs.b37ddd03.js"
+[GIN] 2024/06/19 - 14:25:45 | 304 |     168.166µs |  192.168.18.223 | GET      "/static/index.0e0ebbe9.js"
+[GIN] 2024/06/19 - 14:25:45 | 304 |     236.834µs |  192.168.18.223 | GET      "/static/rpc.18f00a8d.js"
+[GIN] 2024/06/19 - 14:25:45 | 304 |     122.167µs |  192.168.18.223 | GET      "/static/Input.2eb8ead0.js"
+[GIN] 2024/06/19 - 14:25:45 | 304 |     214.042µs |  192.168.18.223 | GET      "/static/logo.png"
+[GIN] 2024/06/19 - 14:25:45 | 200 |         904µs |  192.168.18.223 | GET      "/api/system/config/output/detail"
+[GIN] 2024/06/19 - 14:25:48 | 304 |     400.917µs |  192.168.18.223 | GET      "/static/BasicInfo.9916d298.css"
+[GIN] 2024/06/19 - 14:25:48 | 304 |     258.916µs |  192.168.18.223 | GET      "/static/BasicInfo.ceef5e5c.js"
+[GIN] 2024/06/19 - 14:25:48 | 304 |     266.459µs |  192.168.18.223 | GET      "/static/index.1ef73378.js"
+[GIN] 2024/06/19 - 14:25:48 | 200 |     283.292µs |  192.168.18.223 | GET      "/api/system/config/name/rules"
+[GIN] 2024/06/19 - 14:25:48 | 200 |    1.199751ms |  192.168.18.223 | GET      "/api/system/config/detail"
+[GIN] 2024/06/19 - 14:25:50 | 304 |       294.5µs |  192.168.18.223 | GET      "/static/WirelessNet.19442d57.js"
+[GIN] 2024/06/19 - 14:25:50 | 304 |     500.375µs |  192.168.18.223 | GET      "/static/WirelessNet.9d1a1d13.css"
+[GIN] 2024/06/19 - 14:25:51 | 200 |  1.592104295s |  192.168.18.223 | GET      "/api/system/config/wifi/list"
+[GIN] 2024/06/19 - 14:25:52 | 200 |      159.25µs |  192.168.18.223 | GET      "/api/system/config/name/rules"
+[GIN] 2024/06/19 - 14:25:52 | 200 |     838.418µs |  192.168.18.223 | GET      "/api/system/config/detail"
+[GIN] 2024/06/19 - 14:25:59 | 200 |   24.640598ms |  192.168.18.223 | GET      "/api/system/config/images"
+[GIN] 2024/06/19 - 14:25:59 | 200 |     580.126µs |  192.168.18.223 | GET      "/favicon.ico"
+[GIN] 2024/06/19 - 14:26:02 | 200 |     467.375µs |  192.168.18.223 | GET      "/api/system/config/output/detail"
+[GIN] 2024/06/19 - 14:26:04 | 200 |    62.99037ms |  192.168.18.223 | GET      "/api/system/config/wifi/list"
+[GIN] 2024/06/19 - 14:26:07 | 200 |  161.161426ms |  192.168.18.223 | GET      "/api/system/config/wifi/status"
+[GIN] 2024/06/19 - 14:26:08 | 200 |     112.916µs |  192.168.18.223 | GET      "/api/system/config/name/rules"
+[GIN] 2024/06/19 - 14:26:08 | 200 |       521.5µs |  192.168.18.223 | GET      "/api/system/config/detail"
+2024/06/19 14:26:18 /home/orangepi/go/src/video-capture-terminal-server/cmd/start.go:36: Shutdown Server ...
+2024/06/19 14:26:20 /home/orangepi/go/src/video-capture-terminal-server/module/systemConfig/systemConfig.object.go:292: MJPG-streamer已启动
+2024/06/19 14:26:20 /home/orangepi/go/src/video-capture-terminal-server/cmd/start.go:28: server start
+[GIN] 2024/06/19 - 14:26:23 | 304 |     738.583µs |  192.168.18.223 | GET      "/collect/basic_info"
+[GIN] 2024/06/19 - 14:26:23 | 200 |     429.042µs |  192.168.18.223 | GET      "/api/system/config/name/rules"
+[GIN] 2024/06/19 - 14:26:23 | 200 |    1.626251ms |  192.168.18.223 | GET      "/api/system/config/detail"
+[GIN] 2024/06/19 - 14:26:24 | 304 |     468.625µs |  192.168.18.223 | GET      "/collect/basic_info"
+[GIN] 2024/06/19 - 14:26:24 | 200 |     162.041µs |  192.168.18.223 | GET      "/api/system/config/name/rules"
+[GIN] 2024/06/19 - 14:26:24 | 200 |      930.75µs |  192.168.18.223 | GET      "/api/system/config/detail"
+[GIN] 2024/06/19 - 14:26:26 | 200 |  1.483097733s |  192.168.18.223 | GET      "/api/system/config/wifi/list"
+[GIN] 2024/06/19 - 14:26:27 | 200 |     584.958µs |  192.168.18.223 | GET      "/api/system/config/output/detail"
+[GIN] 2024/06/19 - 14:26:28 | 200 |     219.376µs |  192.168.18.223 | GET      "/api/system/config/name/rules"
+[GIN] 2024/06/19 - 14:26:28 | 200 |     727.209µs |  192.168.18.223 | GET      "/api/system/config/detail"
+[GIN] 2024/06/19 - 14:26:48 | 200 |     927.875µs |  192.168.18.223 | GET      "/api/system/config/output/detail"
+[GIN] 2024/06/19 - 14:26:50 | 200 |     111.375µs |  192.168.18.223 | GET      "/api/system/config/name/rules"
+[GIN] 2024/06/19 - 14:26:50 | 200 |     382.667µs |  192.168.18.223 | GET      "/api/system/config/detail"
+[GIN] 2024/06/19 - 14:26:52 | 200 |     729.542µs |  192.168.18.223 | GET      "/api/system/config/output/detail"
+[GIN] 2024/06/19 - 14:28:00 | 200 |    5.747795ms |  192.168.18.223 | POST     "/api/system/config/output/update"
+[GIN] 2024/06/19 - 14:28:00 | 200 |     927.917µs |  192.168.18.223 | GET      "/api/system/config/output/detail"
+[GIN] 2024/06/19 - 14:28:13 | 200 |      202.75µs |  192.168.18.223 | GET      "/api/system/config/name/rules"
+[GIN] 2024/06/19 - 14:28:13 | 200 |     845.625µs |  192.168.18.223 | GET      "/api/system/config/detail"
+[GIN] 2024/06/19 - 14:28:15 | 200 |     442.792µs |  192.168.18.223 | GET      "/api/system/config/output/detail"
+[GIN] 2024/06/19 - 14:28:21 | 200 |     135.208µs |  192.168.18.223 | GET      "/api/system/config/name/rules"
+[GIN] 2024/06/19 - 14:28:21 | 200 |      443.25µs |  192.168.18.223 | GET      "/api/system/config/detail"
+[GIN] 2024/06/19 - 14:28:22 | 200 |  1.562188444s |  192.168.18.223 | GET      "/api/system/config/wifi/list"
+[GIN] 2024/06/19 - 14:28:22 | 200 |         484µs |  192.168.18.223 | GET      "/api/system/config/output/detail"
+[GIN] 2024/06/19 - 14:28:47 | 200 |     176.584µs |  192.168.18.223 | GET      "/api/system/config/name/rules"
+[GIN] 2024/06/19 - 14:28:47 | 200 |     749.875µs |  192.168.18.223 | GET      "/api/system/config/detail"
+[GIN] 2024/06/19 - 14:28:50 | 200 |    1.647043ms |  192.168.18.223 | POST     "/api/system/config/update"
+[GIN] 2024/06/19 - 14:28:51 | 200 |     414.625µs |  192.168.18.223 | GET      "/api/system/config/detail"
+2024/06/19 14:29:48 /home/orangepi/go/src/video-capture-terminal-server/cmd/start.go:36: Shutdown Server ...
+2024/06/19 14:32:24 /home/orangepi/go/src/video-capture-terminal-server/module/systemConfig/systemConfig.object.go:292: MJPG-streamer已启动
+2024/06/19 14:32:24 /home/orangepi/go/src/video-capture-terminal-server/cmd/start.go:28: server start
+2024/06/19 14:34:02 /home/orangepi/go/src/video-capture-terminal-server/cmd/start.go:36: Shutdown Server ...
+2024/06/19 14:34:02 /home/orangepi/go/src/video-capture-terminal-server/cmd/start.go:100: failed to remove pid file remove /home/orangepi/go/src/video-capture-terminal-server/apps/dev/pid: no such file or directory
+2024/06/19 14:34:09 /home/orangepi/go/src/video-capture-terminal-server/module/systemConfig/systemConfig.object.go:292: MJPG-streamer已启动
+2024/06/19 14:34:09 /home/orangepi/go/src/video-capture-terminal-server/cmd/start.go:28: server start
+2024/06/19 14:34:33 /home/orangepi/go/src/video-capture-terminal-server/cmd/start.go:36: Shutdown Server ...
+2024/06/19 14:34:33 /home/orangepi/go/src/video-capture-terminal-server/cmd/start.go:95: 开始退出
+2024/06/19 15:13:38 /home/orangepi/go/src/video-capture-terminal-server/module/systemConfig/systemConfig.object.go:292: MJPG-streamer已启动
+2024/06/19 15:13:38 /home/orangepi/go/src/video-capture-terminal-server/cmd/start.go:28: server start
+[GIN] 2024/06/19 - 15:13:47 | 304 |     580.375µs |  192.168.18.223 | GET      "/collect/basic_info"
+[GIN] 2024/06/19 - 15:13:47 | 304 |     490.125µs |  192.168.18.223 | GET      "/static/main.ff1f19f5.css"
+[GIN] 2024/06/19 - 15:13:47 | 304 |     604.458µs |  192.168.18.223 | GET      "/static/main.2115247a.js"
+[GIN] 2024/06/19 - 15:13:47 | 304 |     394.834µs |  192.168.18.223 | GET      "/logo.png"
+[GIN] 2024/06/19 - 15:13:47 | 304 |     247.084µs |  192.168.18.223 | GET      "/static/BasicInfo.9916d298.css"
+[GIN] 2024/06/19 - 15:13:47 | 304 |       578.5µs |  192.168.18.223 | GET      "/static/BasicInfo.ceef5e5c.js"
+[GIN] 2024/06/19 - 15:13:47 | 304 |      226.25µs |  192.168.18.223 | GET      "/static/Input.2eb8ead0.js"
+[GIN] 2024/06/19 - 15:13:47 | 304 |     713.041µs |  192.168.18.223 | GET      "/static/rpc.18f00a8d.js"
+[GIN] 2024/06/19 - 15:13:47 | 304 |     541.833µs |  192.168.18.223 | GET      "/static/Breadcrumbs.b37ddd03.js"
+[GIN] 2024/06/19 - 15:13:47 | 304 |     147.167µs |  192.168.18.223 | GET      "/static/index.1ef73378.js"
+[GIN] 2024/06/19 - 15:13:47 | 304 |     233.542µs |  192.168.18.223 | GET      "/static/logo.png"
+[GIN] 2024/06/19 - 15:13:47 | 200 |     308.625µs |  192.168.18.223 | GET      "/api/system/config/name/rules"
+[GIN] 2024/06/19 - 15:13:47 | 200 |     702.792µs |  192.168.18.223 | GET      "/api/system/config/detail"
+[GIN] 2024/06/19 - 15:13:47 | 304 |     190.208µs |  192.168.18.223 | GET      "/static/favicon.ico"
+[GIN] 2024/06/19 - 15:13:48 | 304 |     136.958µs |  192.168.18.223 | GET      "/static/WirelessNet.19442d57.js"
+[GIN] 2024/06/19 - 15:13:48 | 304 |     234.875µs |  192.168.18.223 | GET      "/static/WirelessNet.9d1a1d13.css"
+[GIN] 2024/06/19 - 15:13:48 | 304 |       131.5µs |  192.168.18.223 | GET      "/static/index.0e0ebbe9.js"
+[GIN] 2024/06/19 - 15:13:49 | 200 |  1.546416457s |  192.168.18.223 | GET      "/api/system/config/wifi/list"
+[GIN] 2024/06/19 - 15:13:51 | 200 |       124.5µs |  192.168.18.223 | GET      "/api/system/config/name/rules"
+[GIN] 2024/06/19 - 15:13:51 | 200 |     575.167µs |  192.168.18.223 | GET      "/api/system/config/detail"
+[GIN] 2024/06/19 - 15:35:17 | 200 |     3.42721ms |  192.168.18.223 | POST     "/api/system/config/update"
+[GIN] 2024/06/19 - 15:35:17 | 200 |     851.667µs |  192.168.18.223 | GET      "/api/system/config/detail"
+[GIN] 2024/06/19 - 15:39:54 | 304 |     624.876µs |  192.168.18.223 | GET      "/collect/basic_info"
+[GIN] 2024/06/19 - 15:39:54 | 200 |     179.834µs |  192.168.18.223 | GET      "/api/system/config/name/rules"
+[GIN] 2024/06/19 - 15:39:54 | 200 |     920.125µs |  192.168.18.223 | GET      "/api/system/config/detail"
+[GIN] 2024/06/19 - 15:40:58 | 200 |     711.501µs |  192.168.18.165 | GET      "/"
+[GIN] 2024/06/19 - 15:40:59 | 200 |   64.429978ms |  192.168.18.165 | GET      "/static/main.ff1f19f5.css"
+[GIN] 2024/06/19 - 15:40:59 | 200 |   99.222405ms |  192.168.18.165 | GET      "/static/main.2115247a.js"
+[GIN] 2024/06/19 - 15:40:59 | 200 |     561.833µs |  192.168.18.165 | GET      "/logo.png"
+[GIN] 2024/06/19 - 15:40:59 | 200 |    1.357751ms |  192.168.18.165 | GET      "/static/BasicInfo.ceef5e5c.js"
+[GIN] 2024/06/19 - 15:40:59 | 200 |    1.556792ms |  192.168.18.165 | GET      "/static/BasicInfo.9916d298.css"
+[GIN] 2024/06/19 - 15:40:59 | 200 |     3.11446ms |  192.168.18.165 | GET      "/static/rpc.18f00a8d.js"
+[GIN] 2024/06/19 - 15:40:59 | 200 |    5.823585ms |  192.168.18.165 | GET      "/static/Input.2eb8ead0.js"
+[GIN] 2024/06/19 - 15:40:59 | 200 |    7.249044ms |  192.168.18.165 | GET      "/static/Breadcrumbs.b37ddd03.js"
+[GIN] 2024/06/19 - 15:40:59 | 200 |    8.612045ms |  192.168.18.165 | GET      "/static/index.1ef73378.js"
+[GIN] 2024/06/19 - 15:40:59 | 200 |    1.018042ms |  192.168.18.165 | GET      "/static/favicon.ico"
+[GIN] 2024/06/19 - 15:40:59 | 200 |    2.132292ms |  192.168.18.165 | GET      "/static/logo.png"
+[GIN] 2024/06/19 - 15:40:59 | 200 |     103.708µs |  192.168.18.165 | GET      "/api/system/config/name/rules"
+[GIN] 2024/06/19 - 15:40:59 | 200 |     3.66871ms |  192.168.18.165 | GET      "/api/system/config/detail"
+[GIN] 2024/06/19 - 15:41:06 | 200 |    2.357626ms |  192.168.18.165 | GET      "/static/WirelessNet.9d1a1d13.css"
+[GIN] 2024/06/19 - 15:41:06 | 200 |    6.683127ms |  192.168.18.165 | GET      "/static/index.0e0ebbe9.js"
+[GIN] 2024/06/19 - 15:41:06 | 200 |   50.642807ms |  192.168.18.165 | GET      "/static/WirelessNet.19442d57.js"
+[GIN] 2024/06/19 - 15:41:07 | 200 |    2.105793ms |  192.168.18.165 | GET      "/static/MultipleOutput.d1480cb8.css"
+[GIN] 2024/06/19 - 15:41:07 | 200 |    4.631168ms |  192.168.18.165 | GET      "/static/MultipleOutput.87f130b2.js"
+[GIN] 2024/06/19 - 15:41:07 | 200 |    1.467667ms |  192.168.18.165 | GET      "/api/system/config/output/detail"
+[GIN] 2024/06/19 - 15:41:08 | 200 |   1.57834461s |  192.168.18.165 | GET      "/api/system/config/wifi/list"
+[GIN] 2024/06/19 - 15:41:08 | 200 |      97.458µs |  192.168.18.165 | GET      "/api/system/config/name/rules"
+[GIN] 2024/06/19 - 15:41:08 | 200 |     427.834µs |  192.168.18.165 | GET      "/api/system/config/detail"
+[GIN] 2024/06/19 - 15:41:09 | 200 |     878.292µs |  192.168.18.165 | GET      "/api/system/config/output/detail"
+[GIN] 2024/06/19 - 15:41:11 | 200 |     214.625µs |  192.168.18.165 | GET      "/api/system/config/name/rules"
+[GIN] 2024/06/19 - 15:41:11 | 200 |     757.042µs |  192.168.18.165 | GET      "/api/system/config/detail"
+[GIN] 2024/06/19 - 15:41:18 | 200 |  160.643633ms |  192.168.18.165 | GET      "/api/system/config/wifi/list"
+[GIN] 2024/06/19 - 15:41:24 | 200 |     155.666µs |  192.168.18.165 | GET      "/api/system/config/name/rules"
+[GIN] 2024/06/19 - 15:41:24 | 200 |     865.917µs |  192.168.18.165 | GET      "/api/system/config/detail"
+[GIN] 2024/06/19 - 15:41:33 | 200 |   63.229436ms |  192.168.18.165 | GET      "/api/system/config/wifi/list"
+[GIN] 2024/06/19 - 15:41:36 | 200 |     960.501µs |  192.168.18.165 | GET      "/api/system/config/output/detail"
+[GIN] 2024/06/19 - 15:41:38 | 200 |      95.083µs |  192.168.18.165 | GET      "/api/system/config/name/rules"
+[GIN] 2024/06/19 - 15:41:38 | 200 |     396.375µs |  192.168.18.165 | GET      "/api/system/config/detail"
+[GIN] 2024/06/19 - 15:41:44 | 200 |     442.167µs |  192.168.18.165 | GET      "/api/system/config/output/detail"
+[GIN] 2024/06/19 - 15:41:45 | 200 |  1.435245691s |  192.168.18.165 | GET      "/api/system/config/wifi/list"
+[GIN] 2024/06/19 - 15:42:49 | 200 |     165.792µs |  192.168.18.165 | GET      "/api/system/config/name/rules"
+[GIN] 2024/06/19 - 15:42:49 | 200 |    1.180458ms |  192.168.18.165 | GET      "/api/system/config/detail"
+[GIN] 2024/06/19 - 15:48:31 | 200 |     149.833µs |  192.168.18.165 | GET      "/api/system/config/name/rules"
+[GIN] 2024/06/19 - 15:48:31 | 200 |     540.625µs |  192.168.18.165 | GET      "/api/system/config/detail"
+[GIN] 2024/06/19 - 15:48:32 | 200 |  1.591714805s |  192.168.18.165 | GET      "/api/system/config/wifi/list"
+[GIN] 2024/06/19 - 15:48:59 | 200 |  141.367837ms |  192.168.18.165 | GET      "/api/system/config/wifi/list"
+[GIN] 2024/06/19 - 15:49:06 | 200 |  137.781711ms |  192.168.18.165 | GET      "/api/system/config/wifi/status"
+[GIN] 2024/06/19 - 15:49:07 | 200 |   61.824644ms |  192.168.18.165 | GET      "/api/system/config/wifi/status"
+[GIN] 2024/06/19 - 15:49:10 | 200 |     818.375µs |  192.168.18.165 | GET      "/api/system/config/output/detail"
+[GIN] 2024/06/19 - 15:49:12 | 200 |     159.917µs |  192.168.18.165 | GET      "/api/system/config/name/rules"
+[GIN] 2024/06/19 - 15:49:12 | 200 |     751.876µs |  192.168.18.165 | GET      "/api/system/config/detail"
+[GIN] 2024/06/19 - 15:49:13 | 200 |     460.208µs |  192.168.18.165 | GET      "/api/system/config/output/detail"
+[GIN] 2024/06/19 - 15:49:16 | 200 |     105.042µs |  192.168.18.165 | GET      "/api/system/config/name/rules"
+[GIN] 2024/06/19 - 15:49:16 | 200 |     421.751µs |  192.168.18.165 | GET      "/api/system/config/detail"
+[GIN] 2024/06/19 - 15:49:17 | 200 |  1.580096426s |  192.168.18.165 | GET      "/api/system/config/wifi/list"
+[GIN] 2024/06/19 - 15:49:17 | 200 |     506.833µs |  192.168.18.165 | GET      "/api/system/config/output/detail"
+[GIN] 2024/06/19 - 15:49:23 | 200 |      160.25µs |  192.168.18.165 | GET      "/api/system/config/name/rules"
+[GIN] 2024/06/19 - 15:49:23 | 200 |     957.125µs |  192.168.18.165 | GET      "/api/system/config/detail"
+[GIN] 2024/06/19 - 15:49:24 | 200 |     931.667µs |  192.168.18.165 | GET      "/api/system/config/output/detail"
+[GIN] 2024/06/19 - 15:50:01 | 200 |      94.833µs |  192.168.18.165 | GET      "/api/system/config/name/rules"
+[GIN] 2024/06/19 - 15:50:01 | 200 |     446.666µs |  192.168.18.165 | GET      "/api/system/config/detail"
+[GIN] 2024/06/19 - 15:50:08 | 200 |     499.084µs |  192.168.18.165 | GET      "/api/system/config/output/detail"
+[GIN] 2024/06/19 - 15:50:18 | 200 |     478.709µs |  192.168.18.165 | GET      "/api/system/config/output/detail"
+[GIN] 2024/06/19 - 15:50:18 | 200 |  1.464843722s |  192.168.18.165 | GET      "/api/system/config/wifi/list"
+[GIN] 2024/06/19 - 15:50:18 | 200 |    63.76977ms |  192.168.18.165 | GET      "/api/system/config/wifi/list"
+[GIN] 2024/06/19 - 15:50:19 | 200 |     545.125µs |  192.168.18.165 | GET      "/api/system/config/output/detail"
+[GIN] 2024/06/19 - 15:50:20 | 200 |  115.993288ms |  192.168.18.165 | GET      "/api/system/config/wifi/list"
+[GIN] 2024/06/19 - 15:50:25 | 200 |     412.375µs |  192.168.18.165 | GET      "/api/system/config/output/detail"
+[GIN] 2024/06/19 - 15:51:03 | 200 |       187.5µs |  192.168.18.165 | GET      "/api/system/config/name/rules"
+[GIN] 2024/06/19 - 15:51:03 | 200 |     776.583µs |  192.168.18.165 | GET      "/api/system/config/detail"
+[GIN] 2024/06/19 - 15:51:04 | 200 |     822.751µs |  192.168.18.165 | GET      "/api/system/config/output/detail"
+[GIN] 2024/06/19 - 15:51:06 | 200 |       91.75µs |  192.168.18.165 | GET      "/api/system/config/name/rules"
+[GIN] 2024/06/19 - 15:51:06 | 200 |     403.667µs |  192.168.18.165 | GET      "/api/system/config/detail"
+[GIN] 2024/06/19 - 15:51:09 | 200 |    5.211543ms |  192.168.18.165 | GET      "/api/system/config/images"
+[GIN] 2024/06/19 - 15:51:09 | 200 |     466.583µs |  192.168.18.165 | GET      "/favicon.ico"
+[GIN] 2024/06/19 - 15:51:12 | 200 |    2.967209ms |  192.168.18.165 | GET      "/api/system/config/images"
+[GIN] 2024/06/19 - 15:52:02 | 200 |     823.917µs |  192.168.18.165 | GET      "/api/system/config/output/detail"
+[GIN] 2024/06/19 - 15:52:18 | 200 |     158.709µs |  192.168.18.165 | GET      "/api/system/config/name/rules"
+[GIN] 2024/06/19 - 15:52:18 | 200 |     647.584µs |  192.168.18.165 | GET      "/api/system/config/detail"
+[GIN] 2024/06/19 - 15:52:36 | 200 |     849.417µs |  192.168.18.165 | GET      "/api/system/config/output/detail"
+[GIN] 2024/06/19 - 16:03:00 | 200 |     142.208µs |  192.168.18.165 | GET      "/api/system/config/name/rules"
+[GIN] 2024/06/19 - 16:03:00 | 200 |     467.875µs |  192.168.18.165 | GET      "/api/system/config/detail"
+[GIN] 2024/06/19 - 16:03:05 | 200 |    2.565084ms |  192.168.18.165 | POST     "/api/system/config/update"
+[GIN] 2024/06/19 - 16:03:05 | 200 |     861.375µs |  192.168.18.165 | GET      "/api/system/config/detail"
+[GIN] 2024/06/19 - 16:03:44 | 200 |    2.618043ms |  192.168.18.165 | POST     "/api/system/config/update"
+[GIN] 2024/06/19 - 16:03:44 | 200 |     739.334µs |  192.168.18.165 | GET      "/api/system/config/detail"
+[GIN] 2024/06/19 - 16:03:45 | 200 |    2.557042ms |  192.168.18.165 | POST     "/api/system/config/update"
+[GIN] 2024/06/19 - 16:03:45 | 200 |     782.584µs |  192.168.18.165 | GET      "/api/system/config/detail"
+[GIN] 2024/06/19 - 16:08:01 | 304 |     540.125µs |  192.168.18.223 | GET      "/static/WirelessNet.9d1a1d13.css"
+[GIN] 2024/06/19 - 16:08:01 | 304 |     490.667µs |  192.168.18.223 | GET      "/static/WirelessNet.19442d57.js"
+[GIN] 2024/06/19 - 16:08:01 | 304 |       514.5µs |  192.168.18.223 | GET      "/static/index.0e0ebbe9.js"
+[GIN] 2024/06/19 - 16:08:01 | 304 |     303.042µs |  192.168.18.223 | GET      "/static/favicon.ico"
+[GIN] 2024/06/19 - 16:08:02 | 200 |  1.519829032s |  192.168.18.223 | GET      "/api/system/config/wifi/list"
+[GIN] 2024/06/19 - 16:08:07 | 200 |  161.259844ms |  192.168.18.223 | GET      "/api/system/config/wifi/status"
+[GIN] 2024/06/19 - 16:08:07 | 200 |   60.844478ms |  192.168.18.223 | GET      "/api/system/config/wifi/status"
+[GIN] 2024/06/19 - 16:08:09 | 304 |      94.708µs |  192.168.18.223 | GET      "/static/MultipleOutput.87f130b2.js"
+[GIN] 2024/06/19 - 16:08:09 | 304 |     211.833µs |  192.168.18.223 | GET      "/static/MultipleOutput.d1480cb8.css"
+[GIN] 2024/06/19 - 16:08:09 | 200 |     883.875µs |  192.168.18.223 | GET      "/api/system/config/output/detail"
+[GIN] 2024/06/19 - 16:08:14 | 200 |       177.5µs |  192.168.18.223 | GET      "/api/system/config/name/rules"
+[GIN] 2024/06/19 - 16:08:14 | 200 |     792.251µs |  192.168.18.223 | GET      "/api/system/config/detail"
+2024/06/19 16:34:32 /home/orangepi/go/src/video-capture-terminal-server/cmd/start.go:36: Shutdown Server ...
+2024/06/19 16:34:32 /home/orangepi/go/src/video-capture-terminal-server/cmd/start.go:95: 开始退出

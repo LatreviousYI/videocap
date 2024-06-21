@@ -92,6 +92,7 @@ var startCmd = &cobra.Command{
 }
 
 func ServerExit() {
+	log.Println("开始退出")
 	factory.GlobalCancel()
 	factory.GlobalWG.Wait()
 	// 清理pid文件

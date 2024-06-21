@@ -5,7 +5,11 @@
  */
 package cmd
 
-import "github.com/spf13/cobra"
+import (
+	"time"
+
+	"github.com/spf13/cobra"
+)
 
 func init(){
 	rootCmd.AddCommand(restartCommand)
@@ -17,6 +21,7 @@ var restartCommand = &cobra.Command{
 	Short: "Restart the application",
 	Run: func(cmd *cobra.Command, args []string) {
 		stop()
+		time.Sleep(1*time.Second)
 		daemonStart()
 	},
 }

@@ -5,10 +5,12 @@ import (
 	"encoding/base64"
 	"encoding/json"
 	"errors"
+	"fmt"
 	"io"
 	"log"
 	"net/http"
 	"os"
+	"os/exec"
 	"path/filepath"
 	"regexp"
 	"src/common"
@@ -68,15 +70,23 @@ func(o *OutputConfig)UpdateVerify()error{
 		if o.Local.OutputPath == ""{
 			return errors.New("本地路径未填写")
 		}
-		localPath := filepath.Join(o.Local.OutputPath,"test.txt")
-		utils.PathExistsAndCreate(o.Local.OutputPath)
-		f,err := os.Create(localPath)
+		outPutconfig := OutputConfig{}
+		err :=utils.Get(outPutconfig.DataFileName(),&outPutconfig)
 		if err != nil{
 			return err
 		}
-		defer f.Close()
-		os.Remove(localPath)
-		os.RemoveAll(o.Local.OutputPath)
+		if outPutconfig.Local.OutputPath != o.Local.OutputPath{
+			localPath := filepath.Join(o.Local.OutputPath,"test.txt")
+			utils.PathExistsAndCreate(o.Local.OutputPath)
+			f,err := os.Create(localPath)
+			if err != nil{
+				return err
+			}
+			defer f.Close()
+			os.Remove(localPath)
+			os.RemoveAll(o.Local.OutputPath)
+			os.RemoveAll(outPutconfig.Local.OutputPath)
+		}
 	}
 	if o.Clouds.Enable{
 		if o.Clouds.Host == ""{
@@ -294,3 +304,75 @@ func GuaranteeMjpgServerRunning(){
 }
 
 
+func CleanImages(){
+	outPutConfig := OutputConfig{}
+	weekAgo := time.Now().Unix() -int64(604800)
+	err := utils.Get(outPutConfig.DataFileName(),&outPutConfig)
+	if err != nil{
+		log.Println(err.Error())
+		return
+	}
+	if outPutConfig.Local.Enable{
+		fileList,err := os.ReadDir(outPutConfig.Local.OutputPath)
+		if err != nil{
+			log.Println(err.Error())
+			return
+		}
+		for _,v:= range fileList{
+			fileinfo,err:= v.Info()
+			if err != nil{
+				log.Println(err.Error())
+				continue
+			}
+			fileModTime := fileinfo.ModTime().Unix()
+			if weekAgo >= fileModTime{
+				os.RemoveAll(filepath.Join(outPutConfig.Local.OutputPath,fileinfo.Name()))
+			}
+		}
+	}
+}
+
+
+func TimeCleanlog(){
+	CopyLog()
+	CleanLog()
+}
+// cat /dev/null > aaa.log
+func CleanLog(){
+	basePath := utils.GetExcutePath()
+	logfile := filepath.Join(basePath,"server.log")
+	cmd := exec.Command("/bin/bash","-c",fmt.Sprintf("cat /dev/null > %s",logfile))
+	var stdout, stderr bytes.Buffer
+	cmd.Stdout = &stdout  // 标准输出
+	cmd.Stderr = &stderr  // 标准错误
+	err := cmd.Run()
+	if err != nil{
+		log.Println(err.Error())
+		return
+	}
+	_, errStr := stdout.String(), stderr.String()
+	if errStr != ""{
+		log.Println(errStr)
+		return
+	}
+}
+
+
+func CopyLog(){
+	basePath := utils.GetExcutePath()
+	logfile := filepath.Join(basePath,"server.log")
+	cmd := exec.Command("/bin/bash","-c",fmt.Sprintf("cp %s %s",logfile,logfile+".bak"))
+	var stdout, stderr bytes.Buffer
+	cmd.Stdout = &stdout  // 标准输出
+	cmd.Stderr = &stderr  // 标准错误
+	err := cmd.Run()
+	if err != nil{
+		log.Println(err.Error())
+		return
+	}
+	_, errStr := stdout.String(), stderr.String()
+	if errStr != ""{
+		log.Println(errStr)
+		return
+	}
+}
