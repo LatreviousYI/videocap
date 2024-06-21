@@ -182,12 +182,12 @@ func GetMac() string {
 }
 
 
-func GetIP() string {
+func GetIP() (string,error) {
 	conn, err := net.Dial("udp", "8.8.8.8:80")
 	if err != nil {
-		log.Println(err.Error())
+		return "",err
 	}
 	defer conn.Close()
 	ipAddress := conn.LocalAddr().(*net.UDPAddr)
-	return ipAddress.IP.String()
+	return ipAddress.IP.String(),nil
 }

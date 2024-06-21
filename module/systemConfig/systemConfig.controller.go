@@ -58,6 +58,8 @@ func systemConfigDetail(c *gin.Context) {
 		utils.ErrResponse(c, 500, err.Error(), "")
 		return
 	}
+	ip,_ := utils.GetIP()
+	systemConfigModel.Ip = ip
 	utils.SuccessResp(c, systemConfigModel)
 }
 

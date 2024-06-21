@@ -194,7 +194,12 @@ func SaveCloudsImage(imagebyte []byte,systemConfig SystemConfigModel,outputConfi
 	imagebs64 := base64.StdEncoding.EncodeToString(imagebyte)
 	schemaSaveImageIn.Imagebs64 = "data:image/png;base64,"+imagebs64
 	schemaSaveImageIn.DeviceID = systemConfig.DeviceId
-	schemaSaveImageIn.DeviceIP = utils.GetIP()
+	ip,err := utils.GetIP()
+	if err != nil{
+		log.Println(err)
+		return err
+	}
+	schemaSaveImageIn.DeviceIP = ip
 	schemaSaveImageIn.Datetime = utils.DateTime()
 	requestBody, _ := json.Marshal(schemaSaveImageIn)
 	req, _ := http.NewRequest("POST", outputConfig.Clouds.Host+"/api/v4/AI_httpService/DEV00085/SaveImage", bytes.NewBuffer(requestBody))
