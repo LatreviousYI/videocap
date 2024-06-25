@@ -10,6 +10,9 @@ import (
 	"runtime"
 	"sort"
 	"strings"
+	"syscall"
+
+	"github.com/shirou/gopsutil/process"
 )
 
 
@@ -190,4 +193,25 @@ func GetIP() (string,error) {
 	defer conn.Close()
 	ipAddress := conn.LocalAddr().(*net.UDPAddr)
 	return ipAddress.IP.String(),nil
+}
+
+
+func GetProcessName(pid int)(string,error){
+	proc, err := process.NewProcess(int32(pid))
+    if err != nil {
+		return "",err
+    }
+    // Get the process name
+    name, err := proc.Name()
+    if err != nil {
+		return "",err
+    }
+	return name,nil
+}
+
+func IsProcessAlive(pid int) bool {
+    // syscall.Kill with signal 0 does not actually send a signal,
+    // but it checks for the existence of the process.
+    err := syscall.Kill(pid, 0)
+    return err == nil
 }

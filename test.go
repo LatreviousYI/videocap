@@ -1,15 +1,6 @@
 package main
 
-import (
-	"log"
-	// "net/url"
-	"src/utils"
-)
 
-func main(){
-	log.Println(utils.GetIP()) 
-	
-}
 
 
 // mount -t nfs 10.21.1.25:"\\\\nas.fanhaninfo.net\\AI_Team\\projects\\P00114 监护仪数据采集器 今日医疗\\20240611代码测试数据（勿删）" /home/orangepi/nas_images

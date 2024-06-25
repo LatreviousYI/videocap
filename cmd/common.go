@@ -9,6 +9,7 @@ import (
 	"log"
 	"os"
 	"path/filepath"
+	"src/factory"
 	"src/utils"
 	"strconv"
 )
@@ -23,12 +24,29 @@ func initDaemon(){
 	if ok {
 		bytes, err := os.ReadFile(pidFile)
 		if err != nil {
-			log.Fatal("failed to read pid file", err)
+			log.Println("failed to read pid file", err)
+			pid = -1
+			return
 		}
 		id, err := strconv.Atoi(string(bytes))
 		if err != nil {
-			log.Fatal("failed to parse pid data", err)
+			log.Println("failed to parse pid data", err)
+			pid = -1
+			return
 		}
-		pid = id
+		if utils.IsProcessAlive(id){
+			name,err := utils.GetProcessName(id)
+			if err != nil{
+				log.Println(err)
+				pid = -1
+				return
+			}
+			if factory.ProductName == name{
+				pid = id
+			}
+		}else{
+			pid = -1
+		}
+		
 	}
 }

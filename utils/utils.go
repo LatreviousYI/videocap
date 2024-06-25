@@ -157,4 +157,3 @@ func GetMd5(str string) string {
 	re := h.Sum(nil)
 	return fmt.Sprintf("%x", re)
 }
-

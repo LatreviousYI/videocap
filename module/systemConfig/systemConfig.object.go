@@ -242,6 +242,7 @@ func DeviceId() string{
 
 
 func initDataFile(){
+	defer utils.ErrCatch()
 	systemConfigModel := SystemConfigModel{}
 	err := utils.Get(systemConfigModel.DataFileName(),&systemConfigModel)
 	if err != nil{
@@ -276,6 +277,7 @@ func initDataFile(){
 
 
 func GuaranteeMjpgServerRunning(){
+	defer utils.ErrCatch()
 	_,err := GetImage()
 	if err != nil{
 		var systemConfig SystemConfigModel
@@ -310,6 +312,7 @@ func GuaranteeMjpgServerRunning(){
 
 
 func CleanImages(){
+	defer utils.ErrCatch()
 	outPutConfig := OutputConfig{}
 	weekAgo := time.Now().Unix() -int64(604800)
 	err := utils.Get(outPutConfig.DataFileName(),&outPutConfig)
@@ -339,6 +342,7 @@ func CleanImages(){
 
 
 func TimeCleanlog(){
+	defer utils.ErrCatch()
 	CopyLog()
 	CleanLog()
 }

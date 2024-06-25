@@ -28,6 +28,7 @@ var GlobalCtx context.Context
 
 var GlobalCancel context.CancelFunc
 
+var ProductName string = "capVi"
 
 func index(c *gin.Context){
 	c.Header("content-type", "text/html;charset=utf-8")
@@ -52,7 +53,10 @@ func init() {
 	GinRouter.GET("/healthy", func(c *gin.Context) {
 		c.String(http.StatusOK, "Welcome Gin Server")
 	})
-	GinRouter.Static("/static","./www/static")
+	basepath := utils.GetExcutePath()
+	staticPath := filepath.Join(basepath,"www","static")
+	log.Println(staticPath)
+	GinRouter.Static("/static",staticPath)
 	GinRouter.NoRoute(index)
 	systemConfig.Init(GinRouter)
 }

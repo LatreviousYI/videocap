@@ -5,6 +5,7 @@
 test/
 
 apps/*/server.log
+apps/*/server.log.bak
 apps/*/pid
 
 env/
