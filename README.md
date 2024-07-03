@@ -1,5 +1,10 @@
 # video-capture-terminal-server
 
+capVi start 后台运行
+capVi start console 终端等待运行
+capVi stop 停止
+capVi restart 重启
+
 
 
 ## Getting started
