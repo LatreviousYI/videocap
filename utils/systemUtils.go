@@ -41,14 +41,21 @@ func GetWifiList() ([]Wifi,error){
 		if i == 0{
 			continue
 		}
-		v = strings.ReplaceAll(v,"*","")
 		oneWifiList := strings.Fields(v)
 		if len(oneWifiList) < 3{
 			continue
 		}
-		var wifi = Wifi{
-			Ssid: oneWifiList[1],
-			RowInfo: strings.TrimLeft(v," "),
+		var wifi Wifi
+		if oneWifiList[0] == "*"{
+			wifi = Wifi{
+				Ssid: oneWifiList[2],
+				RowInfo: strings.TrimLeft(v," "),
+			}
+		}else{
+			wifi = Wifi{
+				Ssid: oneWifiList[1],
+				RowInfo: strings.TrimLeft(v," "),
+			}
 		}
 		wifiList = append(wifiList, wifi)
 	}
