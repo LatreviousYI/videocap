@@ -88,25 +88,47 @@ func CheckWifiStatus()(bool,error){
 	return false,nil
 }
 
+// create_ap --fix-unmanaged
 func ConnectWifi(wifiname,password string) error{
-	cmd := exec.Command("/bin/bash","-c",fmt.Sprintf("nmcli dev wifi connect %s password %s",wifiname,password))
+	// ExecEnv()
+	// cmd := exec.Command("/bin/bash","-c",string(fmt.Sprintf("nmcli device wifi connect %s password %s",wifiname,password)))
+	cmd := exec.Command("/bin/nmcli","device","wifi","connect",wifiname,"password",password)
 	var stdout, stderr bytes.Buffer
 	cmd.Stdout = &stdout  // 标准输出
 	cmd.Stderr = &stderr  // 标准错误
 	err := cmd.Run()
 	if err != nil {
+		log.Println(err)
 		return err
 	}
 	outStr, errStr := stdout.String(), stderr.String()
 	if errStr != ""{
+		log.Println(errStr)
 		return errors.New(errStr)
 	}
 	if !strings.Contains(outStr,"successfully"){
+		log.Println(outStr)
 		return errors.New(outStr)
 	}
 	return nil
 }
 
+
+func ExecEnv()error{
+	cmd := exec.Command("env")
+	var stdout, stderr bytes.Buffer
+	cmd.Stdout = &stdout  // 标准输出
+	cmd.Stderr = &stderr  // 标准错误
+	err := cmd.Run()
+	if err != nil {
+		log.Println(err)
+		return err
+	}
+	outStr, errStr := stdout.String(), stderr.String()
+	log.Println("out",outStr)
+	log.Println("err",errStr)
+	return nil
+}
 
 func GetMac() string {
 	goos := runtime.GOOS

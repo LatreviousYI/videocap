@@ -156,6 +156,7 @@ func ImageCapture(){
 		filePath := filepath.Join(outputConfig.Local.OutputPath,systemConfigModel.ImgNameRules)+".png"
 		newfilpath :=  ReplaceImgName(filePath)
 		go func(path string,content []byte){
+			defer utils.ErrCatch()
 			err := SaveLocalImage(path,content)
 			if err != nil{
 				log.Println(err)
@@ -189,6 +190,7 @@ func SaveLocalImage(path string,content []byte) error{
 }
 
 func SaveCloudsImage(imagebyte []byte,systemConfig SystemConfigModel,outputConfig OutputConfig)error{
+	defer utils.ErrCatch()
 	httpClient := &http.Client{}
 	schemaSaveImageIn := SchemaSaveImageIn{}
 	imagebs64 := base64.StdEncoding.EncodeToString(imagebyte)
