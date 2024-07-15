@@ -6,8 +6,10 @@
 package systemConfig
 
 import (
+	"log"
 	"src/common"
 	"src/utils"
+	"time"
 
 	"github.com/gin-gonic/gin"
 )
@@ -117,7 +119,21 @@ func connectWifi(c *gin.Context){
 		utils.ErrResponse(c, 500, err.Error(), "")
 		return
 	}
-	err := utils.ConnectWifi(wifiInfo.Ssid,wifiInfo.Password)
+	if err := wifiInfo.WifiVerify();err != nil{
+		utils.ErrResponse(c, 500, err.Error(), "")
+		return
+	}
+	err := utils.StopCreateAp()
+	if err != nil{
+		log.Println(err)
+	}
+	time.Sleep(1*time.Second)
+	err = utils.FixWifi()
+	if err != nil{
+		log.Println(err)
+	}
+	time.Sleep(1*time.Second)
+	err = utils.ConnectWifi(wifiInfo.Ssid,wifiInfo.Password)
 	if err != nil{
 		utils.ErrResponse(c, 500, err.Error(), "")
 		return

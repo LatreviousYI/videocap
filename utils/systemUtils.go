@@ -29,11 +29,9 @@ func GetWifiList() ([]Wifi,error){
 	cmd.Stdout = &stdout  // 标准输出
 	cmd.Stderr = &stderr  // 标准错误
 	err := cmd.Run()
-	if err != nil {
-		return wifiList,err
-	}
 	outStr, errStr := stdout.String(), stderr.String()
-	if errStr != ""{
+	if errStr != "" || err != nil{
+		log.Println(err)
 		return wifiList,errors.New(errStr)
 	}
 	rowWifiList := strings.Split(strings.ReplaceAll(outStr,"\r\n", "\n"),"\n")
@@ -63,47 +61,82 @@ func GetWifiList() ([]Wifi,error){
 }
 
 func CheckWifiStatus()(bool,error){
-	cmd := exec.Command("/bin/bash","-c",string("nmcli dev status"))
+	cmd := exec.Command("/bin/bash","-c",string("nmcli network connectivity"))
 	var stdout, stderr bytes.Buffer
 	cmd.Stdout = &stdout  // 标准输出
 	cmd.Stderr = &stderr  // 标准错误
 	err := cmd.Run()
-	if err != nil {
-		return false,err
-	}
 	outStr, errStr := stdout.String(), stderr.String()
-	if errStr != ""{
+	if errStr != "" || err != nil{
+		log.Println(err)
 		return false,errors.New(errStr)
 	}
-	rowWifistatusList := strings.Split(strings.ReplaceAll(outStr,"\r\n", "\n"),"\n")
-	for i,v:= range rowWifistatusList{
-		if i == 0{
-			continue
-		}
-		vList := strings.Fields(v)
-		if vList[2] == "connected"{
-			return true,nil
-		}
+	if outStr == ""{
+		return false,errors.New("输出为空")
 	}
-	return false,nil
+	if !strings.Contains(outStr,"full"){
+		return false,errors.New(outStr)
+	}
+	return true,nil
+}
+
+func StopCreateAp()error{
+	cmd := exec.Command("/bin/bash","-c","systemctl stop create_ap.service")
+	var stdout, stderr bytes.Buffer
+	cmd.Stdout = &stdout  // 标准输出
+	cmd.Stderr = &stderr  // 标准错误
+	err := cmd.Run()
+	_, errStr := stdout.String(), stderr.String()
+	if errStr != "" || err != nil{
+		log.Println(errStr,err)
+		return errors.New(errStr)
+	}
+	return nil
+}
+
+
+func FixWifi() error{
+	cmd := exec.Command("/bin/bash","-c","create_ap --fix-unmanaged")
+	var stdout, stderr bytes.Buffer
+	cmd.Stdout = &stdout  // 标准输出
+	cmd.Stderr = &stderr  // 标准错误
+	err := cmd.Run()
+	_, errStr := stdout.String(), stderr.String()
+	if errStr != "" || err != nil{
+		log.Println(errStr,err)
+		return errors.New(errStr)
+	}
+	return nil
+}
+
+
+func CloseUseCreateAp() error{
+	cmd := exec.Command("/bin/bash","-c","systemctl disable create_ap.service")
+	var stdout, stderr bytes.Buffer
+	cmd.Stdout = &stdout  // 标准输出
+	cmd.Stderr = &stderr  // 标准错误
+	err := cmd.Run()
+	_, errStr := stdout.String(), stderr.String()
+	if errStr != "" || err != nil{
+		log.Println(errStr,err)
+		return errors.New(errStr)
+	}
+	return nil
 }
 
 // create_ap --fix-unmanaged
 func ConnectWifi(wifiname,password string) error{
 	// ExecEnv()
-	// cmd := exec.Command("/bin/bash","-c",string(fmt.Sprintf("nmcli device wifi connect %s password %s",wifiname,password)))
-	cmd := exec.Command("/bin/nmcli","device","wifi","connect",wifiname,"password",password)
+	cmd := exec.Command("/bin/bash","-c",fmt.Sprintf(`nmcli device wifi connect %s password %s`,wifiname,password))
+	// cmd := exec.Command("/bin/nmcli","device","wifi","connect",strconv.Quote(wifiname) ,"password",strconv.Quote(password))
+	// cmd := exec.Command("./wifi_connect.sh",wifiname,password)
 	var stdout, stderr bytes.Buffer
 	cmd.Stdout = &stdout  // 标准输出
 	cmd.Stderr = &stderr  // 标准错误
 	err := cmd.Run()
-	if err != nil {
-		log.Println(err)
-		return err
-	}
 	outStr, errStr := stdout.String(), stderr.String()
-	if errStr != ""{
-		log.Println(errStr)
+	if errStr != "" || err != nil{
+		log.Println(errStr,err)
 		return errors.New(errStr)
 	}
 	if !strings.Contains(outStr,"successfully"){

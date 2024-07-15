@@ -16,7 +16,7 @@ if not os.path.exists(publish_path):
 else:
     shutil.rmtree(publish_path)
     os.makedirs(publish_path)
-    
+os.remove("capVi.zip")
 
 # 需要复制
 config_path = os.path.join(root_path,"config")
@@ -40,6 +40,7 @@ shutil.copytree(uiptah_path, publish_uipath_path)
 shutil.copytree(wwwroot_path, publish_wwwroot_path)
 shutil.copy(exe_path, publish_path)
 os.makedirs(db_path)
+
 shutil.make_archive("capVi", 'zip', publish_path)
 print("发布成功")
 

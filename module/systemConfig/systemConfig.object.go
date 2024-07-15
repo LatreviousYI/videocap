@@ -387,3 +387,11 @@ func CopyLog(){
 		return
 	}
 }
+
+
+func(w *WifiConfig) WifiVerify()error{
+	if w.Ssid =="" || w.Password == ""{
+		return errors.New("wifi名称和密码未上传")
+	}
+	return nil
+}
