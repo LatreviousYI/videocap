@@ -95,6 +95,21 @@ func StopCreateAp()error{
 }
 
 
+func ReloadSystemctlDaemon()error{
+	cmd := exec.Command("/bin/bash","-c","systemctl daemon-reload")
+	var stdout, stderr bytes.Buffer
+	cmd.Stdout = &stdout  // 标准输出
+	cmd.Stderr = &stderr  // 标准错误
+	err := cmd.Run()
+	_, errStr := stdout.String(), stderr.String()
+	if errStr != "" || err != nil{
+		log.Println(errStr,err)
+		return errors.New(errStr)
+	}
+	return nil
+}
+
+
 func FixWifi() error{
 	cmd := exec.Command("/bin/bash","-c","create_ap --fix-unmanaged")
 	var stdout, stderr bytes.Buffer

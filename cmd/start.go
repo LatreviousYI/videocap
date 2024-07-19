@@ -25,6 +25,7 @@ func init(){
 func start(){
 	go func() {
 		// 服务连接
+		factory.Init()
 		log.Println("server start")
 		if err := factory.HttpServer.ListenAndServe(); err != nil && err != http.ErrServerClosed {
 			log.Fatalf("listen: %s\n", err)

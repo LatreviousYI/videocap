@@ -24,8 +24,9 @@ func Init(factoryRouter *gin.Engine){
 	systemConfigRouetr.GET("/wifi/list",getWifiList)
 	systemConfigRouetr.POST("/wifi/connect",connectWifi)
 	systemConfigRouetr.GET("/wifi/status",checkWifiStatus)
-	
+
 	systemConfigRouetr.GET("/name/rules",getNameRulesList)
+	
 	initDataFile()
 	GuaranteeMjpgServerRunning()
 

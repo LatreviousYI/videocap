@@ -123,20 +123,35 @@ func connectWifi(c *gin.Context){
 		utils.ErrResponse(c, 500, err.Error(), "")
 		return
 	}
-	err := utils.StopCreateAp()
-	if err != nil{
-		log.Println(err)
-	}
-	time.Sleep(1*time.Second)
-	err = utils.FixWifi()
-	if err != nil{
-		log.Println(err)
-	}
-	time.Sleep(1*time.Second)
-	err = utils.ConnectWifi(wifiInfo.Ssid,wifiInfo.Password)
-	if err != nil{
-		utils.ErrResponse(c, 500, err.Error(), "")
-		return
+	for i:=0;i<20;i++{
+		err := utils.StopCreateAp()
+		if err != nil{
+			log.Println(err)
+		}
+		time.Sleep(1*time.Second)
+		err = utils.FixWifi()
+		if err != nil{
+			log.Println(err)
+		}
+		time.Sleep(1*time.Second)
+		err = utils.ConnectWifi(wifiInfo.Ssid,wifiInfo.Password)
+		if err != nil{
+			utils.ErrResponse(c, 500, err.Error(), "")
+			return
+		}
+		time.Sleep(5*time.Second)
+		ok,err:=utils.CheckWifiStatus()
+		if err != nil{
+			log.Println(err)
+		}
+		if ok{
+			err:=utils.StopCreateAp()
+			if err != nil{
+				log.Println(err)
+			}
+			break
+		}
+		time.Sleep(5*time.Second)
 	}
 	utils.SuccessResp(c,"")
 }
@@ -157,3 +172,4 @@ func checkWifiStatus(c *gin.Context){
 func getNameRulesList(c *gin.Context){
 	utils.SuccessResp(c,FileTemplateMap)
 }
+

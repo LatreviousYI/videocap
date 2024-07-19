@@ -36,7 +36,7 @@ func index(c *gin.Context){
 	c.File(filepath.Join(basePath,"www","index.html"))
 }
 
-func init() {
+func Init() {
 	log.SetFlags(log.LstdFlags | log.Llongfile | log.Ldate)
 	conifg := utils.GetConfig()
 	if !conifg.Debug{

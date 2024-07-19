@@ -13,7 +13,7 @@ var rootCmd = &cobra.Command{
 	Long:  ``,
 	Run: func(cmd *cobra.Command, args []string) {
 		// Do Stuff Here
-		fmt.Println("capVi -h")
+		cmd.Help()
 	},
 }
 
