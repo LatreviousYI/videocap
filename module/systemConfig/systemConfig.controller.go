@@ -145,7 +145,7 @@ func connectWifi(c *gin.Context){
 			log.Println(err)
 		}
 		if ok{
-			err:=utils.StopCreateAp()
+			err:=utils.CloseUseCreateAp()
 			if err != nil{
 				log.Println(err)
 			}

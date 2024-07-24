@@ -4,8 +4,8 @@
 
 test/
 
-apps/*/server.log
-apps/*/server.log.bak
+server.log
+server.log.bak
 apps/*/pid
 
 env/
