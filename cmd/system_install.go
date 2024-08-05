@@ -29,6 +29,8 @@ ExecStart=#path# start console
 KillSignal=SIGINT
 Restart=on-failure
 RestartSec=5
+StandardOutput=append:#basepath#/server.log
+StandardError=inherit
 
 [Install]
 WantedBy=multi-user.target`
@@ -42,6 +44,7 @@ WantedBy=multi-user.target`
 	}
 	defer f.Close()
 	systemFile = strings.ReplaceAll(systemFile,"#path#",exePath)
+	systemFile = strings.ReplaceAll(systemFile,"#basepath#",basePath)
 	_,err = f.Write([]byte(systemFile))
 	if err != nil{
 		log.Println(err)

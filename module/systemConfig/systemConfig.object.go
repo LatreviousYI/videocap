@@ -220,10 +220,12 @@ func SaveCloudsImage(imagebyte []byte,systemConfig SystemConfigModel,outputConfi
 	var schemaSaveImageOut SchemaSaveImageOut
 	err = json.Unmarshal(body, &schemaSaveImageOut)
 	if err != nil{
+		log.Println(string(body))
 		log.Println(err.Error())
 		return err
 	}
 	if !schemaSaveImageOut.Success {
+		log.Println(string(body))
 		log.Println("success不等于true")
 		return errors.New("success不等于true")
 	}
