@@ -92,6 +92,7 @@ func(o *OutputConfig)UpdateVerify()error{
 		if o.Clouds.Host == ""{
 			return errors.New("host未填写")
 		}
+		o.Clouds.Host = strings.TrimRight(o.Clouds.Host,"/")
 	}
 	return nil
 }
